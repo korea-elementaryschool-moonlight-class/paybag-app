@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components/native'
+import FastImage from 'react-native-fast-image'
 
 import { TextStyles, Themes } from '~/styles'
 import { scaledWidth, scaledHeight, boxShadow } from '~/styles/mixins'
@@ -9,10 +10,44 @@ const MarketInfoCard = ({ marketName, ecobagStock }) => {
   return (
     <Container>
       <ImageWrapper>
-        <CircleBackground />
+        {marketName.includes('GS25') && (
+          <FastImage
+            style={{ width: '100%', height: '100%' }}
+            source={require('~/images/gs25.png')}
+            resizeMode={FastImage.resizeMode.contain}
+          />
+        )}
+        {marketName.includes('CU') && (
+          <FastImage
+            style={{ width: '100%', height: '100%' }}
+            source={require('~/images/cu.png')}
+            resizeMode={FastImage.resizeMode.contain}
+          />
+        )}
+        {marketName.includes('세븐일레븐') && (
+          <FastImage
+            style={{ width: '100%', height: '100%' }}
+            source={require('~/images/seveneleven.png')}
+            resizeMode={FastImage.resizeMode.contain}
+          />
+        )}
+        {marketName.includes('미니스톱') && (
+          <FastImage
+            style={{ width: '100%', height: '100%' }}
+            source={require('~/images/ministop.png')}
+            resizeMode={FastImage.resizeMode.contain}
+          />
+        )}
+        {marketName.includes('이마트24') && (
+          <FastImage
+            style={{ width: '100%', height: '100%' }}
+            source={require('~/images/emart24.png')}
+            resizeMode={FastImage.resizeMode.contain}
+          />
+        )}
       </ImageWrapper>
       <ContentWrapper>
-        <MarketName>{marketName}</MarketName>
+        <MarketName>{marketName.toString()}</MarketName>
         <Remark>
           {ecobagStock > 0
             ? `지금 에코백 대여가 가능해요!\n남은 수량 : ${ecobagStock}개`
@@ -45,13 +80,8 @@ const ImageWrapper = styled.View`
   width: 80px;
   height: 80px;
   margin-right: ${scaledWidth(16)}px;
-`
-
-const CircleBackground = styled.View`
-  width: 100%;
-  height: 100%;
-  border-radius: ${scaledWidth(40)}px;
-  background-color: ${Themes.backgroundWeaken};
+  justify-content: center;
+  align-items: center;
 `
 
 const ContentWrapper = styled.View`
