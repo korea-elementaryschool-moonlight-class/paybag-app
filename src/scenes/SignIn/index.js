@@ -19,6 +19,7 @@ const SignIn = () => {
   const [phone, setPhone] = useState('')
   const [password, setPassword] = useState('')
 
+  // TODO: api 모듈화
   const onPress = async () => {
     if (phone.length && password.length) {
       await axios

@@ -6,6 +6,12 @@ import FastImage from 'react-native-fast-image'
 import { TextStyles, Themes } from '~/styles'
 import { scaledWidth, scaledHeight, boxShadow } from '~/styles/mixins'
 
+/**
+ * 지도에 표시된 Market 상세 정보 카드 컴포넌트
+ *
+ * @param { marketName, ecobagStock }
+ * @returns
+ */
 const MarketInfoCard = ({ marketName, ecobagStock }) => {
   return (
     <Container>

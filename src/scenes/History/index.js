@@ -14,10 +14,16 @@ import { MockingHistory } from '~/mocks'
 
 import { User } from '~/stores'
 
+/**
+ * 사용자 개인이 이용한 에코백 대여 History
+ *
+ * @returns
+ */
 const History = () => {
   const [historyData, setHistoryData] = useState([])
   const [phoneNumber, setPhoneNumber] = useState(User._loggedIn.phone)
 
+  // TODO: api 모듈화
   const getHistoryData = async () => {
     await axios
       .get(`http://pwnable.co.kr:8000/history?phone=${phoneNumber}`)

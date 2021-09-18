@@ -12,6 +12,12 @@ import { SvgBack } from '~/icons'
 const AnimatedSafeAreaView = Animated.createAnimatedComponent(SafeAreaView)
 const AnimatedView = Animated.View
 
+/**
+ * Header 컴포넌트
+ *
+ * @param { title }
+ * @returns
+ */
 const Header = ({ title }) => {
   const navigation = useNavigation()
 

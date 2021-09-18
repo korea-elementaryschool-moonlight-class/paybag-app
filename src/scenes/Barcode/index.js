@@ -11,6 +11,11 @@ import Header from '~/components/Header'
 
 import { User } from '~/stores'
 
+/**
+ * 사용자 식별 바코드를 보여주는 페이지
+ *
+ * @returns
+ */
 const Barcode = () => {
   return (
     <Container>

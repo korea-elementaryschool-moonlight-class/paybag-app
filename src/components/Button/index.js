@@ -5,6 +5,12 @@ import styled from 'styled-components/native'
 import { TextStyles } from '~/styles'
 import { scaledWidth, boxShadow } from '~/styles/mixins'
 
+/**
+ * Button 컴포넌트
+ *
+ * @param { width, height, color, innerText, onPress }
+ * @returns
+ */
 const Button = ({ width, height, color, innerText, onPress }) => {
   return (
     <Container>

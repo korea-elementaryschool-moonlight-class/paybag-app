@@ -10,6 +10,12 @@ import { SvgMenu } from '~/icons'
 const AnimatedSafeAreaView = Animated.createAnimatedComponent(SafeAreaView)
 const AnimatedView = Animated.View
 
+/**
+ * Home Header 컴포넌트
+ *
+ * @param { onPress }
+ * @returns
+ */
 const HomeHeader = ({ onPress }) => {
   return (
     <Container>

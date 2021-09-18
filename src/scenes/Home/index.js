@@ -37,6 +37,11 @@ import { User } from '~/stores'
 const AnimatedSafeAreaView = Animated.createAnimatedComponent(SafeAreaView)
 const AnimatedView = Animated.View
 
+/**
+ * Home
+ *
+ * @returns
+ */
 const Home = () => {
   const navigation = useNavigation()
 
@@ -53,6 +58,7 @@ const Home = () => {
   const fadeAnim = useRef(new Animated.Value(0)).current
   const authBottomSheet = useRef(null)
 
+  // TODO: api 모듈화 (apply dotenv)
   const [marketInfoData, setMarketInfoData] = useState([])
   const getMarketInfoData = async () => {
     await axios
