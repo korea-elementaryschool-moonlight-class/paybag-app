@@ -2,6 +2,7 @@ import React, { useCallback } from 'react'
 import PropTypes from 'prop-types'
 import { Animated, SafeAreaView } from 'react-native'
 import styled from 'styled-components/native'
+import FastImage from 'react-native-fast-image'
 
 import { TextStyles, Themes } from '~/styles'
 import { scaledWidth, scaledHeight } from '~/styles/mixins'
@@ -24,6 +25,11 @@ const HomeHeader = ({ onPress }) => {
           <SvgMenu width={scaledWidth(32)} height={scaledHeight(32)} />
         </MenuButton>
       </HeaderLeft>
+      <FastImage
+        style={{ width: scaledWidth(32), height: scaledHeight(32) }}
+        source={require('~/assets/app-logo.png')}
+        resizeMode={FastImage.resizeMode.contain}
+      />
       <HeaderTitle>PAYBAG</HeaderTitle>
     </Container>
   )
@@ -57,4 +63,5 @@ const MenuButton = styled.TouchableOpacity``
 const HeaderTitle = styled.Text`
   ${TextStyles.Heading5};
   text-align: center;
+  color: ${Themes.primary};
 `
